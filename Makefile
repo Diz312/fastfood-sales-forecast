@@ -28,9 +28,9 @@ seed:
 # Forecast
 forecast:
 	@echo "Triggering forecast run..."
-	curl -s -X POST http://localhost:8000/api/agents/runs \
+	curl -s -X POST http://localhost:8000/forecasts \
 	  -H "Content-Type: application/json" \
-	  -d '{"horizon_days": 90, "scope": "all"}' | python3 -m json.tool
+	  -d '{"triggered_by": "manual"}' | python3 -m json.tool
 
 # Dev
 shell:

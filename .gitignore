@@ -68,6 +68,9 @@ minio_data/
 # Postgres local data
 postgres_data/
 
+# Claude Code worktrees (embedded git repos)
+.claude/worktrees/
+
 # Misc
 *.pkl
 *.joblib
