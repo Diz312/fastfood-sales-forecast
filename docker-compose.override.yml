@@ -1,0 +1,11 @@
+# Dev overrides: hot reload, debug logging
+services:
+  api:
+    command: uvicorn src.api.main:app --host 0.0.0.0 --port 8000 --reload
+    environment:
+      LOG_LEVEL: DEBUG
+
+  worker:
+    command: celery -A src.workers.celery_app worker -l debug -Q forecast,default -c 1
+    environment:
+      LOG_LEVEL: DEBUG
